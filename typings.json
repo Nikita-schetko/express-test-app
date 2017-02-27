@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "express": "registry:dt/express#4.0.0+20170118060322"
+    "express": "registry:dt/express#4.0.0+20170118060322",
+    "mongodb": "registry:dt/mongodb#2.1.0+20170212052546"
   }
 }
