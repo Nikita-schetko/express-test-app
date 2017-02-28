@@ -13,8 +13,9 @@ MongoClient.connect('mongodb://nikShc:fuckfuck@ds056559.mlab.com:56559/monbase',
   });
 })
 
-// app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
@@ -37,7 +38,7 @@ app.post('/quotes', (req, res) => {
 
 app.put('/quotes', (req, res) => {
   db.collection('quotes')
-  .findOneAndUpdate({name: 'Yoda'}, {
+  .findOneAndReplace({_id: new mongodb.ObjectID(req.body._id)}, {
     $set: {
       name: req.body.name,
       quote: req.body.quote
@@ -52,9 +53,10 @@ app.put('/quotes', (req, res) => {
 })
 
 app.delete('/quotes', (req, res) => {
-  db.collection('quotes').deleteOne({_id: new mongodb.ObjectID(req.body._id)},
-  (err, result) => {
-    if (err) return res.send(500, err)
-    res.send('A darth vadar quote got deleted');
-  })
+  db.collection('quotes').deleteOne({ _id: new mongodb.ObjectID(req.body._id) },
+    (err, result) => {
+      if (err) return res.send(500, err)
+      if (result.deletedCount == 1) res.send('Succesfull');
+      else res.send('Failed');
+    })
 })
