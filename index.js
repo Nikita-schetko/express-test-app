@@ -5,13 +5,24 @@ const mongodb = require('mongodb');
 const MongoClient = require('mongodb').MongoClient;
 
 var db;
+//REMOTE DB
 MongoClient.connect('mongodb://nikShc:fuckfuck@ds056559.mlab.com:56559/monbase', (err, database) => {
   if (err) return console.log(err);
   db = database;
   app.listen(process.env.PORT || 3000, () => {
     console.log('listening on 3000');
   });
-})
+});
+
+// LOCAL DB
+// MongoClient.connect('mongodb://localhost:27017/quotesproject', (err, database) => {
+//   if (err) return console.log(err);
+//   db = database;
+//   app.listen(process.env.PORT || 3000, () => {
+//     console.log('listening on 3000');
+//   });
+// });
+
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());

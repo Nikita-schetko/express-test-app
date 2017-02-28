@@ -9,6 +9,10 @@ li
     margin: 4px;
     list-style: none;
 }
+input
+{
+    padding: 2px;
+}
 span.name {
     font-weight: bold;
     padding: 2px 5px;
