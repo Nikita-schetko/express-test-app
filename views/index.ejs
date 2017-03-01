@@ -4,28 +4,31 @@
   <meta charset="UTF-8">
   <title>MY APP</title>
   <link rel="stylesheet" href="main.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
 </head>
 <body>
-  <h1>May Node and Express be with you.</h1>
-
-  <ul class="quotes">
-  <% for(var i=0; i<quotes.length; i++) {%>
-    <li class="quote" >
-      <span class="name"><%= quotes[i].name %></span>
-      <span class="quote"><%= quotes[i].quote %></span>
-      <button type="button" data-type="edit" onclick="editQuote(this,'<%= quotes[i]._id %>')">&nbsp;</button>
-      <button type="button" data-type="save" onclick="updateQuote(this,'<%= quotes[i]._id %>')" class="hidden" >Save</button> 
-      <button type="button" data-type="cancel" onclick="cancelEditing(this,'<%= quotes[i]._id %>')" class="hidden" >Cancel</button>       
-      <button type="button" data-type="remove" onclick="deleteQuote('<%= quotes[i]._id %>')">&nbsp;</button>
-    </li>
-  <% } %>
-  </ul>
-
-  <form action="/quotes" method="POST">
-    <input type="text" placeholder="name" name="name">
-    <input type="text" placeholder="quote" name="quote">
-    <button type="submit">Submit</button>
-  </form>
+<div class="main-wrapper">
+    <h1>May Node and Express be with you.</h1>
+    <ul class="quotes">
+    <% for(var i=0; i<quotes.length; i++) {%>
+      <li class="quote" >
+        <span class="name"><%= quotes[i].name %></span>
+        <span class="quote"><%= quotes[i].quote %></span>
+        <button type="button" data-type="edit" onclick="editQuote(this,'<%= quotes[i]._id %>')">&nbsp;</button>
+        <button type="button" data-type="save" onclick="updateQuote(this,'<%= quotes[i]._id %>')" class="hidden" >Save</button> 
+        <button type="button" data-type="cancel" onclick="cancelEditing(this,'<%= quotes[i]._id %>')" class="hidden" >Cancel</button>       
+        <button type="button" data-type="remove" onclick="deleteQuote('<%= quotes[i]._id %>')">&nbsp;</button>
+      </li>
+    <% } %>
+    </ul>
+  
+    <form action="/quotes" method="POST">
+    <label>Add new quote</label>
+      <input type="text" placeholder="name" name="name" class="simple-input">
+      <input type="text" placeholder="quote" name="quote" class="simple-input">
+      <button type="submit" class="btn">Submit</button>
+    </form>
+</div>
     <script src="main.js"></script>
 </body>
 </html>

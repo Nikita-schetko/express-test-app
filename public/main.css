@@ -1,9 +1,21 @@
 body
 {
-    width: 600px;
+    width: 670px;
     margin: 0 auto;
+    margin-top:50px;
+    padding: 20px;
+    box-shadow: 3px 3px 10px 2px rgba(214,214,214,1);
+    font-family: 'Open Sans', sans-serif;
 }
-
+.main-wrapper
+{
+background: url("./evoke_horiz_small.png") no-repeat top right;
+}
+h1
+{
+    margin-top:0;
+    font-weight: 400;
+}
 li
 {
     margin: 4px;
@@ -13,6 +25,7 @@ input
 {
     padding: 2px;
 }
+
 span.name {
     font-weight: bold;
     padding: 2px 5px;
@@ -51,4 +64,67 @@ button[data-type="remove"]
     outline: none 0 !important;
     cursor: pointer;
     background: center center no-repeat url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAAZElEQVQImWNgAAFWBh+GQAZzBhRQwyDJwMMQxiALE9jEcJNhFRy+ZrABCfIANSLAXAgFEkxj4GKoYLBlEEIWzASS9QwODCIEBSMZOBmyGcwYBGCC3AwRSBbNQ7gS5qAVDDogAQDd8xan+djw3gAAAABJRU5ErkJggg==);
+}
+
+.logo
+{
+    height: 50px;
+}
+
+
+.btn
+{
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .5rem 1rem;
+    font-size: 0.8rem;
+    border-radius: .25rem;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    color: #fff;
+    background-color: #0275d8;
+    border-color: #0275d8;
+    cursor: pointer;
+}
+
+.btn:hover
+{
+    color: #fff;
+    background-color: #025aa5;
+    border-color: #01549b;
+}
+label
+{
+    display: block;
+    font-size: 13px;
+    margin-bottom: 2px;
+}
+.simple-input
+{
+
+    padding: .5rem .75rem;
+    font-size: 0.8rem;
+    line-height: 1;
+    color: #464a4c;
+    background-color: #fff;
+    background-image: none;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
 }
