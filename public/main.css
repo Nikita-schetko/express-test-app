@@ -25,6 +25,10 @@ input
 {
     padding: 2px;
 }
+hr
+{
+    margin:30px 0;
+}
 
 span.name {
     font-weight: bold;
